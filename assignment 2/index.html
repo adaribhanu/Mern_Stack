@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Tasks</title>
+</head>
+<body>
+    <h1>JavaScript Tasks with User Input</h1>
+  
+    <label for="age">Enter Age:</label>
+    <input type="number" id="age">
+    <button onclick="checkAdult()">Check Adult</button>
+    <p id="adultResult"></p>
+    
+    <label for="x">Enter first number (x):</label>
+    <input type="number" id="x">
+    <label for="y">Enter second number (y):</label>
+    <input type="number" id="y">
+    <button onclick="performOperations()">Calculate</button>
+    <p id="operationsResult"></p>
+    
+    <label for="num">Enter a Number:</label>
+    <input type="number" id="num">
+    <button onclick="checkEvenOdd()">Check Even/Odd</button>
+    <p id="evenOddResult"></p>
+    
+    <label for="squareNum">Enter a Number to Square:</label>
+    <input type="number" id="squareNum">
+    <button onclick="calculateSquare()">Calculate Square</button>
+    <p id="squareResult"></p>
+    
+    <label for="startNum">Enter a Start Number:</label>
+    <input type="number" id="startNum">
+    <button onclick="storeNumbers()">Store 5 Numbers</button>
+    <p id="numbersArray"></p>
+    
+    <script>
+        function checkAdult() {
+            let age = document.getElementById("age").value;
+            let isAdult = age >= 18;
+            document.getElementById("adultResult").innerText = "Is Adult: " + isAdult;
+        }
+        
+        function performOperations() {
+            let x = parseInt(document.getElementById("x").value);
+            let y = parseInt(document.getElementById("y").value);
+            let addition = x + y;
+            let multiplication = x * y;
+            let modulus = x % y;
+            document.getElementById("operationsResult").innerText = `Addition: ${addition}, Multiplication: ${multiplication}, Modulus: ${modulus}`;
+        }
+        
+        function checkEvenOdd() {
+            let n = document.getElementById("num").value;
+            let isEven = (n % 2 === 0) ? "Even" : "Odd";
+            document.getElementById("evenOddResult").innerText = "Number is: " + isEven;
+        }
+        
+        function calculateSquare() {
+            let num = document.getElementById("squareNum").value;
+            document.getElementById("squareResult").innerText = "Square: " + (num * num);
+        }
+        
+        function storeNumbers() {
+            let numbers = [];
+            let startNum = parseInt(document.getElementById("startNum").value);
+            for (let i = 0; i < 5; i++) {
+                numbers.push(startNum + i);
+            }
+            document.getElementById("numbersArray").innerText = "Numbers Array: " + numbers.join(", ");
+        }
+    </script>
+</body>
+</html>
